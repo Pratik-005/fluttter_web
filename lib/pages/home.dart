@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web/utils/constants.dart';
+import 'package:flutter_web/widgets/hero_section.dart';
 import 'package:flutter_web/widgets/navbar.dart';
 
 class Home extends StatelessWidget {
@@ -11,7 +12,9 @@ class Home extends StatelessWidget {
     h = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      body: SingleChildScrollView(child: Column(children: [Navbar()])),
+      body: SingleChildScrollView(
+        child: Column(children: [Navbar(), HeroSection()]),
+      ),
     );
   }
 }
