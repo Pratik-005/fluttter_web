@@ -9,13 +9,13 @@ class HeroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
-      mobile: mobileHeroSction(),
-      desktop: desktopHeroSction(),
+      mobile: mobileHeroSection(),
+      desktop: desktopHeroSection(),
     );
   }
 }
 
-Widget mobileHeroSction() {
+Widget mobileHeroSection() {
   return Container(
     margin: EdgeInsets.symmetric(horizontal: w! / 10, vertical: 20),
     child: Column(
@@ -47,7 +47,7 @@ Widget mobileHeroSction() {
           style: TextStyle(color: Colors.grey.shade600, fontSize: 16),
         ),
         SizedBox(height: 30),
-        Container(
+        SizedBox(
           height: 45,
           child: ElevatedButton.icon(
             style: ButtonStyle(
@@ -58,7 +58,7 @@ Widget mobileHeroSction() {
             label: Text('Try a Demo'),
           ),
         ),
-        SizedBox(height: 10),
+        SizedBox(height: 20),
         Text(
           '— Web, iOs and Android',
           style: TextStyle(color: Colors.grey.shade600, fontSize: 16),
@@ -68,8 +68,73 @@ Widget mobileHeroSction() {
   );
 }
 
-Widget desktopHeroSction() {
+Widget desktopHeroSection() {
   return Container(
     margin: EdgeInsets.symmetric(horizontal: w! / 10, vertical: 20),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Expanded(
+          child: Container(
+            // color: Colors.red,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Track your \nExpenses to \nSave Money',
+                  style: TextStyle(
+                    fontSize: w! / 20,
+                    fontWeight: FontWeight.bold,
+                    height: 1,
+                  ),
+                ),
+                SizedBox(height: 20),
+                Text(
+                  'Helps you to organize your income and expenses',
+                  style: TextStyle(color: Colors.grey.shade400, fontSize: 16),
+                ),
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    Container(
+                      height: 45,
+                      child: ElevatedButton.icon(
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(
+                            AppColors.primary,
+                          ),
+                        ),
+                        onPressed: () {},
+                        icon: Icon(Icons.arrow_drop_down),
+                        label: Text('Try a Demo'),
+                      ),
+                    ),
+                    SizedBox(width: 20),
+                    Text(
+                      '— Web, iOs and Android',
+                      style: TextStyle(
+                        color: Colors.grey.shade400,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+        Expanded(
+          child: Container(
+            height: 530,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(illustration1),
+                fit: BoxFit.contain,
+              ),
+            ),
+          ),
+        ),
+      ],
+    ),
   );
 }
