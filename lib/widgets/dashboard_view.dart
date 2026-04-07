@@ -60,6 +60,77 @@ class _Container2State extends State<Container2> {
   }
 }
 
+Widget DesktopContainer2() {
+  return Container(
+    height: 900,
+    width: double.infinity,
+    decoration: BoxDecoration(color: AppColors.primary),
+    child: Column(
+      children: [
+        Expanded(
+          child: Stack(
+            children: [
+              Positioned(
+                top: -20,
+                right: -20,
+                child: Container(
+                  height: 320,
+                  width: 320,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(vector1),
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                bottom: -20,
+                left: -20,
+                child: Container(
+                  height: 320,
+                  width: 320,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(vector2),
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 43,
+                right: 43,
+                bottom: 0,
+                child: Container(
+                  width: double.infinity,
+                  height: 712,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(image: AssetImage(dashboard)),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Container(
+          color: Colors.white,
+          padding: EdgeInsets.symmetric(vertical: 40),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              companyLogo(fb),
+              companyLogo(google),
+              companyLogo(cocacola),
+              companyLogo(samsung),
+            ],
+          ),
+        ),
+      ],
+    ),
+  );
+}
+
 Widget companyLogo(String image) {
   return Container(
     width: 160,
