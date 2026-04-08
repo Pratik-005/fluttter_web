@@ -1,27 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web/utils/constants.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:xpense_flutter_web/utils/colors.dart';
-import 'package:xpense_flutter_web/utils/constants.dart';
 
-class Container2 extends StatefulWidget {
-  const Container2({super.key});
+class DashboardView extends StatefulWidget {
+  const DashboardView({super.key});
 
   @override
-  _Container2State createState() => _Container2State();
+  _DashboardViewState createState() => _DashboardViewState();
 }
 
-class _Container2State extends State<Container2> {
+class _DashboardViewState extends State<DashboardView> {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
-      mobile: MobileContainer2(),
-      desktop: DesktopContainer2(),
+      mobile: MobileDashboardView(),
+      desktop: DesktopDashboardView(),
     );
   }
 
   //=========== MOBILE ===========
-  Widget MobileContainer2() {
+  Widget MobileDashboardView() {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(color: AppColors.primary),
@@ -60,7 +58,7 @@ class _Container2State extends State<Container2> {
   }
 }
 
-Widget DesktopContainer2() {
+Widget DesktopDashboardView() {
   return Container(
     height: 900,
     width: double.infinity,
