@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web/utils/colors.dart';
 import 'package:flutter_web/utils/constants.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -6,20 +7,20 @@ class DashboardView extends StatefulWidget {
   const DashboardView({super.key});
 
   @override
-  _DashboardViewState createState() => _DashboardViewState();
+  DashboardViewState createState() => DashboardViewState();
 }
 
-class _DashboardViewState extends State<DashboardView> {
+class DashboardViewState extends State<DashboardView> {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
-      mobile: MobileDashboardView(),
-      desktop: DesktopDashboardView(),
+      mobile: mobileDashboardView(),
+      desktop: desktopDashboardView(),
     );
   }
 
   //=========== MOBILE ===========
-  Widget MobileDashboardView() {
+  Widget mobileDashboardView() {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(color: AppColors.primary),
@@ -58,7 +59,7 @@ class _DashboardViewState extends State<DashboardView> {
   }
 }
 
-Widget DesktopDashboardView() {
+Widget desktopDashboardView() {
   return Container(
     height: 900,
     width: double.infinity,
@@ -96,6 +97,7 @@ Widget DesktopDashboardView() {
                   ),
                 ),
               ),
+
               Positioned(
                 left: 43,
                 right: 43,

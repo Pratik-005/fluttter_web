@@ -70,14 +70,17 @@ Widget mobileHeroSection() {
 
 Widget desktopHeroSection() {
   return Container(
+    height: (3 * h!) / 4,
     margin: EdgeInsets.symmetric(horizontal: w! / 10, vertical: 20),
     child: Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Expanded(
           child: Container(
             // color: Colors.red,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
@@ -125,7 +128,7 @@ Widget desktopHeroSection() {
         ),
         Expanded(
           child: Container(
-            height: 530,
+            height: w! / 4,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(illustration1),
